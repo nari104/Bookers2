@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
 
   has_one_attached :book
+  has_many :books, dependent: :destroy
 
   def get_book(width, height)
     unless book.attached?
