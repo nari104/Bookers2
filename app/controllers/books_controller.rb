@@ -48,7 +48,7 @@ class BooksController < ApplicationController
     else
       flash[:notice] = "updateに失敗しました"
       @books = Book.all.order(id: :asc)
-      render :index
+      render :edit
     end
   end
 
