@@ -27,28 +27,28 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown" style>
             <ul class="navbar-nav ml-auto">
               <li>
-                <a class="nav-link text-light" href="/">
+                <%= link_to user_path(current_user.id), class:"nav-link text-light" do %>
                   <i class="fa-solid fa-house"></i>
                   Home
-                </a>
+                <% end %>
               </li>
               <li>
-                <a class="nav-link text-light" href="/users">
+                <%= link_to users_path, class:"nav-link text-light" do %>
                   <i class="fa-solid fa-users"></i>
                   Users
-                </a>
+                <% end %>
               </li>
               <li>
-                <a class="nav-link text-light" href="/books">
+                <%= link_to books_path, class:"nav-link text-light" do %>
                   <i class="fa-solid fa-book-open"></i>
                   Books
-                </a>
+                <% end %>
               </li>
               <li>
-                <a class="nav-link text-light" href="/">
-                  <i class="fa-solid fa-right-from-bracket"></i>
+                <%= link_to destroy_user_session_path, method: :delete, class:"nav-link text-light" do %>
+                 <i class="fa-solid fa-right-from-bracket"></i>
                   Log out
-                </a>
+                <% end %>
               </li>
             </ul>
           </div>
@@ -68,28 +68,29 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown" style>
             <ul class="navbar-nav ml-auto">
               <li>
-                <a class="nav-link text-light" href="/">
+                <%= link_to root_path, class:"nav-link text-light" do %>
                   <i class="fa-solid fa-house"></i>
                   Home
-                </a>
+                <% end %>
               </li>
               <li>
-                <a class="nav-link text-light" href="/homes/about">
+                <%= link_to about_path, class:"nav-link text-light" do %>
                   <i class="fa-solid fa-link"></i>
                   About
+                <% end %>
                 </a>
               </li>
               <li>
-                <a class="nav-link text-light" href="/users/sign_up">
+                <%= link_to new_user_registration_path, class:"nav-link text-light" do %>
                   <i class="fa-solid fa-user-plus"></i>
                   Sign up
-                </a>
+                <% end %>
               </li>
               <li>
-                <a class="nav-link text-light" href="/users/sign_in">
+                <%= link_to new_user_session_path, class:"nav-link text-light" do %>
                   <i class="fa-solid fa-right-to-bracket"></i>
                   Log in
-                </a>
+                <% end %>
               </li>
             </ul>
           </div>
@@ -97,6 +98,8 @@
       </nav>
       <% end %>
     </header>
+
+    <%= flash[:notice] %>
 
     <%= yield %>
 
